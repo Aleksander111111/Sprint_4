@@ -35,4 +35,9 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Store/.idea//.mvn/
+/.idea/
+/.idea/
+/.idea/
+/.idea/
+/.idea/
