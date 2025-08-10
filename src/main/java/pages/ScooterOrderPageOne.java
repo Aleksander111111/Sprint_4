@@ -4,19 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static Constants.ConstantsOrderScooter.*;
 
-public class ScooterOrderPage_1 {
+
+public class ScooterOrderPageOne {
     private final WebDriver driver;
-    private final By name = By.cssSelector( FIRST_NAME_INPUT);
-    private final By laName = By.cssSelector(LAST_NAME_INPUT);
-    private final By Address = By.cssSelector( ADDRESS_INPUT);
-    private final By selectionMetroStation = By.className(METRO_STATION_SELECTION);
-    private final By selectionMetroStationClick = By.className(METRO_STATION_CLICK);
-    private final By phone = By.cssSelector(PHONE_INPUT);
-    private final By nextButton = By.xpath(NEXT_BUTTON);
+    private final By name = By.cssSelector("input[placeholder='* Имя']");
+    private final By laName = By.cssSelector("input[placeholder='* Фамилия']");
+    private final By address = By.cssSelector("input[placeholder='* Адрес: куда привезти заказ']");
+    private final By selectionMetroStation = By.className("select-search__input");
+    private final By selectionMetroStationClick = By.className("select-search__select");
+    private final By phone = By.cssSelector("input[placeholder='* Телефон: на него позвонит курьер']");
+    private final By nextButton = By.xpath("//button[text()='Далее']");
 
-    public ScooterOrderPage_1(WebDriver driver) {
+    public ScooterOrderPageOne(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -30,9 +30,9 @@ public class ScooterOrderPage_1 {
         lastNameInput.sendKeys(lastName);
     }
 
-    public void Address(String address) {
-        WebElement addressInput = driver.findElement(Address);
-        addressInput.sendKeys(address);
+    public void address(String shippingAddress) {
+        WebElement addressInput = driver.findElement(address);
+        addressInput.sendKeys(shippingAddress);
     }
 
     public void selectionMetroStation(String metroStation) {

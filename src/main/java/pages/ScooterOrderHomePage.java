@@ -4,17 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import static Constants.ConstantsUrlCookies.*;
 
 public class ScooterOrderHomePage {
     private final WebDriver driver;
-    private final By cookies = By.id(COOKIES);
+    private final By cookies = By.id("rcc-confirm-button");
     public ScooterOrderHomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void URL() {
+    public void url() {
         driver.get(BASE_URL);
     }
 
@@ -22,13 +21,13 @@ public class ScooterOrderHomePage {
         driver.findElement(cookies).click();
     }
 
-    public void button_2(String button) throws InterruptedException {
+    public void buttonTwo(String button) throws InterruptedException {
         WebElement element = driver.findElement(By.cssSelector(button));
-        ((JavascriptExecutor) driver).executeScript(SCROLL, element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         driver.findElement(By.cssSelector(button)).click();
     }
 
-    public void button_1(String button) {
+    public void buttonOne(String button) {
         driver.findElement(By.xpath(button)).click();
     }
 }

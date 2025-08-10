@@ -3,16 +3,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static Constants.ConstantsOrderScooter.*;
 
-public class ScooterOrderPage_2 {
+
+public class ScooterOrderPageTwo {
     private final WebDriver driver;
-    private final By whenDeliverOrder = By.cssSelector(WHEN_DELIVER_ORDER);
-    private final By RentalPeriod = By.cssSelector(RENTAL_PERIOD);
-    private final By commentCourier = By.cssSelector(COMMENT_COURIER);
-    private final By orderScooterButton = By.xpath(ORDER_SCOOTER_BUTTON);
+    private final By whenDeliverOrder = By.cssSelector("input[placeholder='* Когда привезти самокат']");
+    private final By rentalPeriod = By.cssSelector("div.Dropdown-control[aria-haspopup='listbox']");
+    private final By commentCourier = By.cssSelector("input[placeholder='Комментарий для курьера']");
+    private final By orderScooterButton = By.xpath("//div[contains(@class, 'Order_Buttons__1xGrp')]//button[text()='Заказать']");
 
-    public ScooterOrderPage_2(WebDriver driver) {
+    public ScooterOrderPageTwo(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -21,9 +21,9 @@ public class ScooterOrderPage_2 {
         driver.findElement(By.cssSelector(deliveryDate)).click();
     }
 
-    public void RentalPeriod(String rentalPeriod) {
-        driver.findElement(RentalPeriod).click();
-        WebElement twoDaysOption =  driver.findElement(By.xpath(rentalPeriod));
+    public void rentalPeriod(String period) {
+        driver.findElement(rentalPeriod).click();
+        WebElement twoDaysOption =  driver.findElement(By.xpath(period));
         twoDaysOption.click();
     }
 

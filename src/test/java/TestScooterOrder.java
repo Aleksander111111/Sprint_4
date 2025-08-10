@@ -40,41 +40,41 @@ public class TestScooterOrder {
     @Parameterized.Parameters
     public static Object[][] testScooter(){
         return new Object[][]{
-                {BUTTON_ORDER_1, FIRST_NAME_1, LAST_NAME_1, ADDRESS_1, METRO_STATION_1, PHONE_1, DATE_PICKER_DAY_1,
-                        DURATION_DROPDOWN_OPTION_1, COLOR_SELECTOR_1, COMMENT_1},
-                {BUTTON_ORDER_2, FIRST_NAME_2, LAST_NAME_2, ADDRESS_2, METRO_STATION_2, PHONE_2, DATE_PICKER_DAY_2,
-                        DURATION_DROPDOWN_OPTION_2, COLOR_SELECTOR_2, COMMENT_2}
+                {BUTTON_ORDER_ONE, FIRST_NAME_ONE, LAST_NAME_ONE, ADDRESS_ONE, METRO_STATION_ONE, PHONE_ONE, DATE_PICKER_DAY_ONE,
+                        DURATION_DROPDOWN_OPTION_ONE, COLOR_SELECTOR_ONE, COMMENT_ONE},
+                {BUTTON_ORDER_TWO, FIRST_NAME_TWO, LAST_NAME_TWO, ADDRESS_TWO, METRO_STATION_TWO, PHONE_TWO, DATE_PICKER_DAY_TWO,
+                        DURATION_DROPDOWN_OPTION_TWO, COLOR_SELECTOR_TWO, COMMENT_TWO}
         };
     }
 
     @Test
-    public void TestOrder() throws InterruptedException {
+    public void testOrder() throws InterruptedException {
         WebDriver driver = factory.getDriver();
         ScooterOrderHomePage page = new ScooterOrderHomePage(driver);
-        ScooterOrderPage_1 page_1 = new ScooterOrderPage_1(driver);
-        ScooterOrderPage_2 page_2 = new ScooterOrderPage_2(driver);
+        ScooterOrderPageOne page1 = new ScooterOrderPageOne(driver);
+        ScooterOrderPageTwo page2 = new ScooterOrderPageTwo(driver);
         WindowOrderYes orderYes = new WindowOrderYes(driver);
         CheckingOrderWindow checkingWindow = new CheckingOrderWindow(driver);
-        page.URL();
+        page.url();
         page.cookies();
-        boolean buttonStart = button.equals(BUTTON_ORDER_2);
+        boolean buttonStart = button.equals(BUTTON_ORDER_TWO);
         if (buttonStart){
-            page.button_2(button);
+            page.buttonTwo(button);
         }else {
-            page.button_1(button);
+            page.buttonOne(button);
         }
-        page_1.name(firstName);
-        page_1.laName(lastName);
-        page_1.Address(address);
-        page_1.selectionMetroStation(metroStation);
-        page_1.selectionMetroStationClick();
-        page_1.phone(phoneNumber);
-        page_1.nextButton();
-        page_2.whenDeliverOrder(deliveryDate);
-        page_2.RentalPeriod(rentalPeriod);
-        page_2.colorScooter(color);
-        page_2.commentCourier(comment);
-        page_2.orderScooterButton();
+        page1.name(firstName);
+        page1.laName(lastName);
+        page1.address(address);
+        page1.selectionMetroStation(metroStation);
+        page1.selectionMetroStationClick();
+        page1.phone(phoneNumber);
+        page1.nextButton();
+        page2.whenDeliverOrder(deliveryDate);
+        page2.rentalPeriod(rentalPeriod);
+        page2.colorScooter(color);
+        page2.commentCourier(comment);
+        page2.orderScooterButton();
         orderYes.buttonYes();
         checkingWindow.checkingOrderPlacedWindow();
 
