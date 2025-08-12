@@ -1,4 +1,4 @@
-package pages;
+package ru.practicum.pages.questions.scooter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 
 
-public class ScooterOrderPageOne {
+public class ScooterRenterInfoPage {
     private final WebDriver driver;
     private final By name = By.cssSelector("input[placeholder='* Имя']");
     private final By laName = By.cssSelector("input[placeholder='* Фамилия']");
@@ -16,7 +16,7 @@ public class ScooterOrderPageOne {
     private final By phone = By.cssSelector("input[placeholder='* Телефон: на него позвонит курьер']");
     private final By nextButton = By.xpath("//button[text()='Далее']");
 
-    public ScooterOrderPageOne(WebDriver driver) {
+    public ScooterRenterInfoPage(WebDriver driver) {
         this.driver = driver;
     }
 

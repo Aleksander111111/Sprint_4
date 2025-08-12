@@ -1,4 +1,4 @@
-package pages;
+package ru.practicum.pages.questions.scooter;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

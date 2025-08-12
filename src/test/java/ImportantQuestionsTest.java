@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.ImportantQuestionsPage;
-import static Constants.ConstantsImportantQuestions.*;
+import ru.practicum.pages.questions.scooter.ImportantQuestionsPage;
+import static ru.practicum.constants.questions.scooter.ConstantsImportantQuestions.*;
 
 @RunWith(Parameterized.class)
 public class ImportantQuestionsTest {
@@ -22,14 +22,14 @@ public class ImportantQuestionsTest {
     }
     @Parameterized.Parameters public static Object[][] getTest() {
         return new Object[][]{
-                {0, ANSWER_ZERO},
-                {1, ANSWER_ONE},
-                {2, ANSWER_TWO},
-                {3, ANSWER_THREE},
-                {4, ANSWER_FOUR},
-                {5, ANSWER_FIVE},
-                {6, ANSWER_SIX},
-                {7, ANSWER_SEVEN}
+                {0, DELIVERY_COST_INFO},
+                {1, SINGLE_ORDER_LIMITATION},
+                {2, RENT_DURATION_EXPLANATION},
+                {3, FUTURE_AVAILABILITY_NOTICE},
+                {4, SUPPORT_CONTACT_INFO},
+                {5, BATTERY_CHARGE_DURATION},
+                {6, NO_PENALTY_BEFORE_DELIVERY},
+                {7, MANDATORY_HELMET_WEARING}
         };
     }
 

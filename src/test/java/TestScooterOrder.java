@@ -3,9 +3,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import pages.*;
-
-import static Constants.ConstantsOrderScooter.*;
+import ru.practicum.pages.questions.scooter.*;
+import static ru.practicum.constants.questions.scooter.ConstantsOrderScooter.*;
 
 @RunWith(Parameterized.class)
 public class TestScooterOrder {
@@ -40,10 +39,10 @@ public class TestScooterOrder {
     @Parameterized.Parameters
     public static Object[][] testScooter(){
         return new Object[][]{
-                {BUTTON_ORDER_ONE, FIRST_NAME_ONE, LAST_NAME_ONE, ADDRESS_ONE, METRO_STATION_ONE, PHONE_ONE, DATE_PICKER_DAY_ONE,
-                        DURATION_DROPDOWN_OPTION_ONE, COLOR_SELECTOR_ONE, COMMENT_ONE},
-                {BUTTON_ORDER_TWO, FIRST_NAME_TWO, LAST_NAME_TWO, ADDRESS_TWO, METRO_STATION_TWO, PHONE_TWO, DATE_PICKER_DAY_TWO,
-                        DURATION_DROPDOWN_OPTION_TWO, COLOR_SELECTOR_TWO, COMMENT_TWO}
+                {ORDER_BUTTON_FIRST, FIRST_NAME_FIRST, LAST_NAME_FIRST, ADDRESS_FIRST, METRO_STATION_FIRST, PHONE_FIRST, DATE_PICKER_DAY_FIRST,
+                        DURATION_DROPDOWN_OPTION_SUTKI, COLOR_SELECTOR_BLACK, COMMENT_FIRST},
+                {ORDER_BUTTON_SECOND, FIRST_NAME_SECOND, LAST_NAME_SECOND, ADDRESS_SECOND, METRO_STATION_SECOND, PHONE_SECOND, DATE_PICKER_DAY_SECOND,
+                        DURATION_DROPDOWN_OPTION_DVOE_SUTOKI, COLOR_SELECTOR_GREY, COMMENT_SECOND}
         };
     }
 
@@ -51,13 +50,13 @@ public class TestScooterOrder {
     public void testOrder() throws InterruptedException {
         WebDriver driver = factory.getDriver();
         ScooterOrderHomePage page = new ScooterOrderHomePage(driver);
-        ScooterOrderPageOne page1 = new ScooterOrderPageOne(driver);
-        ScooterOrderPageTwo page2 = new ScooterOrderPageTwo(driver);
+        ScooterRenterInfoPage page1 = new ScooterRenterInfoPage(driver);
+        ScooterInfoPage page2 = new ScooterInfoPage(driver);
         WindowOrderYes orderYes = new WindowOrderYes(driver);
         CheckingOrderWindow checkingWindow = new CheckingOrderWindow(driver);
         page.url();
         page.cookies();
-        boolean buttonStart = button.equals(BUTTON_ORDER_TWO);
+        boolean buttonStart = button.equals(ORDER_BUTTON_SECOND);
         if (buttonStart){
             page.buttonTwo(button);
         }else {

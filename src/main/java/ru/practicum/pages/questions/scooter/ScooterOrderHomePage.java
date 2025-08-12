@@ -1,10 +1,11 @@
-package pages;
+package ru.practicum.pages.questions.scooter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import static Constants.ConstantsUrlCookies.*;
+
+import static ru.practicum.constants.questions.scooter.ConstantsUrlCookies.BASE_URL;
 
 public class ScooterOrderHomePage {
     private final WebDriver driver;

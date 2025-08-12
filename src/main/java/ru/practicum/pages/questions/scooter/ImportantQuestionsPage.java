@@ -1,4 +1,4 @@
-package pages;
+package ru.practicum.pages.questions.scooter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import static Constants.ConstantsUrlCookies.*;
+
+import static ru.practicum.constants.questions.scooter.ConstantsUrlCookies.BASE_URL;
 
 public class ImportantQuestionsPage {
     private final WebDriver driver;
